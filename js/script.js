@@ -1,11 +1,17 @@
-function printMessage(msg){
-	var div = document.createElement('div');
-	div.innerHTML = msg;
-	document.getElementById('messages').appendChild(div);
+let randomNumber = Math.floor(Math.random() * 3 + 1);
+
+console.log('Wylosowana liczba to: ' + randomNumber);
+
+let computerMove = 'nieznany ruch';
+
+if(randomNumber == 1){
+  computerMove = 'kamień';
+}
+else if(randomNumber == 2){
+ 	computerMove = 'papier';
+}
+else if(randomNumber == 3){
+	computerMowe = "nożyce"
 }
 
-function clearMessages(){
-	document.getElementById('messages').innerHTML = '';
-}
-let playerMove = 'papier';
-printMessage('Zagrałem ' + playerMove + '! Jeśli Twój ruch to kamień, to wygrałem');
+printMessage('Mój ruch to: ' + computerMove);
