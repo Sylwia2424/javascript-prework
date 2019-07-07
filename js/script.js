@@ -1,10 +1,26 @@
+function computerMove
+
+
 let randomNumber = Math.floor(Math.random() * 3 + 1);
 
 console.log('Wylosowana liczba to: ' + randomNumber);
 
-let computerMove = 'nieznany ruch';
+let computerMove = getMoveName(randomNumber);
 
- if(randomNumber == '1'){
+function getMoveName(argComputerMove){
+  if(argComputerMove == 1){
+    return 'kamień';
+  } if(argComputerMove == 2){
+    return 'papier';
+  } if(argComputerMove == 3){
+    return 'nożyce';
+  } else {
+    printMessage('Nie znam ruchu o id ' + argMoveId + '.');
+    return 'nieznany ruch';
+  }
+}
+
+ /*if(randomNumber == '1'){
   computerMove = "kamień";
   }
  else if(randomNumber == '2'){
@@ -13,11 +29,38 @@ let computerMove = 'nieznany ruch';
  else if(randomNumber == '3'){
   computerMove = "nożyce";
   }
-
+*/
 printMessage('Mój ruch to: ' + computerMove);
 
 let playerMove = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
 
+function getMoveName(argPlayerMove){
+  if(argPlayerMove == 1){
+    return 'kamień';
+  } if(argPlayerMove == 2){
+    return 'papier';
+  } if(argPlayerMove == 3){
+    return 'nożyce';
+  } else {
+    printMessage('Nie znam ruchu o id ' + argMoveId + '.');
+    return 'nieznany ruch';
+  }
+}
+printMessage('Mój ruch to: ' + playerMove);
+
+console.log('moves:', argComputerMove, argPlayerMove);
+function displayResult(argComputerMove, argPlayerMove){
+  printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+    if( argComputerMove == 'kamień' && argPlayerMove == 'papier' || argComputerMove == 'papier' && argPlayerMove == 'nożyce' || argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
+    printMessage('Ty wygrywasz!');
+  }if ( argComputerMove == 'kamień' && argPlayerMove == 'kamień' || argComputerMove == 'papier' && argPlayerMove == 'papier' || argComputerMove == 'nożyce' && argPlayerMove == 'nożyce'){
+    printMessage('Remis!');
+  }
+  else {
+    printMessage('Tym razem przegrywasz :(');
+  }
+}
+/*
 if(playerMove == '1'){
   playerMove = "kamień";
 }
@@ -42,3 +85,4 @@ else if( computerMove == 'kamień' && playerMove == 'kamień' || computerMove ==
 else if( computerMove == 'kamień' && playerMove == 'nożyce' || computerMove == 'papier' && playerMove == 'kamień' || computerMove == 'nożyce' && playerMove == 'papier'){
   printMessage('Przegrałes');
 }
+*/
