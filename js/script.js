@@ -53,18 +53,18 @@ function displayResult(argComputerMove, argPlayerMove){
 }
 }
 function buttonClicked(){
-  printMessage('kamień');
+  playGame(1);
 }
 let testButton = document.getElementById('play-rock');
 
 play-rock.addEventListener('click', playGame);
 function buttonClicked(){
-  printMessage('papier');
+  playGame(2);
 }
 let testButton = document.getElementById('play-paper');
 play-paper.addEventListener('click', playGame);
 function buttonClicked(){
-  printMessage('nożyce');
+  playGame(3);
 }
 let testButton = document.getElementById('play-scissors');
 play-scissors.addEventListener('click', playGame);
