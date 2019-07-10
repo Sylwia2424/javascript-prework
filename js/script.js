@@ -1,3 +1,4 @@
+{
 function playGame, clearMessages(argPlayerInput){
 	if(argPlayerInput == 1, 2, 3)
 
@@ -9,7 +10,7 @@ console.log('Wylosowana liczba to: ' + randomNumber);
 
 let computerMove = getMoveName(randomNumber);
 
-function getMoveName(argComputerMove){
+const getMoveName = function(argComputerMove){
   if(argComputerMove == 1){
     return 'kamień';
   }else if(argComputerMove == 2){
@@ -40,7 +41,7 @@ console.log('Gracz wpisał: ' + playerInput);
 
 
 console.log('moves:', argComputerMove, argPlayerMove);
-function displayResult(argComputerMove, argPlayerMove){
+const displayResult = function(argComputerMove, argPlayerMove){
   printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
     if( argComputerMove == 'kamień' && argPlayerMove == 'papier' || argComputerMove == 'papier' && argPlayerMove == 'nożyce' || argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
     printMessage('Ty wygrywasz!');
@@ -52,23 +53,23 @@ function displayResult(argComputerMove, argPlayerMove){
   }
 }
 }
-function buttonClicked(){
+const buttonClicked = function(){
   playGame(1);
 }
 let testButton = document.getElementById('play-rock');
 
 play-rock.addEventListener('click', playGame);
-function buttonClicked(){
+const buttonClicked = function(){
   playGame(2);
 }
 let testButton = document.getElementById('play-paper');
 play-paper.addEventListener('click', playGame);
-function buttonClicked(){
+const buttonClicked = function(){
   playGame(3);
 }
 let testButton = document.getElementById('play-scissors');
 play-scissors.addEventListener('click', playGame);
-
+}
 /*
 if(playerMove == '1'){
   playerMove = "kamień";
